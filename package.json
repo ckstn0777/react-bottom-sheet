@@ -1,9 +1,12 @@
 {
   "version": "0.1.0",
   "license": "MIT",
-  "name": "react-bottom-sheet",
+  "name": "chan-bottom-sheet",
   "author": "Chansu Kim",
   "repository": "https://github.com/ckstn0777/react-bottom-sheet",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
   "keywords": [
     "react",
     "modal",
@@ -42,6 +45,9 @@
     "semi": true,
     "singleQuote": true,
     "trailingComma": "es5"
+  },
+  "np": {
+    "yarn": true
   },
   "size-limit": [
     {
