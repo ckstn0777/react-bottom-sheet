@@ -1,13 +1,12 @@
 // import 'react-app-polyfill/ie11';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Thing3 } from '../.';
+import { ReactButtonSheet } from '../.';
 
 const App = () => {
   return (
     <div>
-      <p>111</p>
-      <Thing3 />
+      <ReactButtonSheet text="test component" />
     </div>
   );
 };
