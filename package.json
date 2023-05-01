@@ -24,10 +24,10 @@
   },
   "scripts": {
     "start": "tsdx watch",
+    "prepare": "yarn build",
     "build": "tsdx build && yarn build-tailwind",
     "test": "jest",
     "lint": "tsdx lint",
-    "prepare": "tsdx build",
     "size": "size-limit",
     "analyze": "size-limit --why",
     "release": "np",
