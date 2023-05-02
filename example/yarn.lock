@@ -911,6 +911,11 @@ chalk@^4.1.0:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
+chan-bottom-sheet@^0.1.3:
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/chan-bottom-sheet/-/chan-bottom-sheet-0.1.3.tgz#675145572f488eb80b539a34a999a738dac1c17f"
+  integrity sha512-dgKDLv27fcT9QfV53XQhg4Zjqjl8fZTl2pGa/MpOPKdu1XYn51h264o/Nv0ip1NvamRgkzq6Vfl4zQdtPrMr0Q==
+
 chokidar@^3.5.3:
   version "3.5.3"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-3.5.3.tgz#1cf37c8707b932bd1af1ae22c0432e2acd1903bd"
