@@ -11,4 +11,9 @@ export interface ReactButtomSheetProps {
    * The text to display
    */
   children: React.ReactNode;
+
+  /**
+   * The element to append the bottom sheet to
+   */
+  container: Element | DocumentFragment;
 }

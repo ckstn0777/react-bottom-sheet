@@ -15,6 +15,7 @@ const config: StorybookConfig = {
       },
     },
   ],
+  staticDirs: ['../public'], //👈 Configures the static asset folder in Storybook
   framework: {
     name: '@storybook/react-webpack5',
     options: {},

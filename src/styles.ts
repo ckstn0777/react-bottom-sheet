@@ -10,7 +10,12 @@ const styles: { [key: string]: React.CSSProperties } = {
     bottom: '0',
     backgroundColor: 'white',
     width: '100%',
-    height: '360px',
+    minHeight: '300px',
+    zIndex: 100,
+    //border: '1px solid #334155cc',
+    borderTopLeftRadius: '8px',
+    borderTopRightRadius: '8px',
+    overflow: 'hidden',
   },
   closebtn: {
     position: 'absolute',
@@ -19,6 +24,13 @@ const styles: { [key: string]: React.CSSProperties } = {
     backgroundColor: 'slategray',
     width: '2rem',
     height: '2rem',
+  },
+  header: {
+    width: '40px',
+    height: '4px',
+    backgroundColor: '#aaaaaa',
+    borderRadius: '4px',
+    margin: '8px auto 16px',
   },
 };
 
