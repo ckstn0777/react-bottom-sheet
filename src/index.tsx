@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { BottomSheetContext, useBottomSheetContext } from './context';
 import { ReactButtomSheetProps } from './types';
 import styles from './styles';
+import { inEffect, outEffect } from './utils';
 
 function ReactButtomSheet({
   isOpen,
@@ -13,20 +14,6 @@ function ReactButtomSheet({
   if (!container) {
     throw new Error('container element not found');
   }
-
-  const inEffect = (height: number) => `
-    @keyframes react-fade-in {
-      0%   { transform: translateY(${height}px); }
-      100% { transform: translateY(0); }
-    }
-  `;
-
-  const outEffect = (height: number) => `
-    @keyframes react-fade-out {
-      0%   { transform: translateY(0); }
-      100% { transform: -translateY(${height}px); }
-    }
-  `;
 
   const bottomSheetRef = useRef<HTMLDivElement>(null);
   const [translateY, setTranslateY] = useState(0);
