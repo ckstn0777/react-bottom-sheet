@@ -2,9 +2,9 @@ import React from 'react';
 
 export default function YoutubeMusicContent({ setIsOpen }) {
   return (
-    <div className="relative w-full h-full bg-red-900/50">
+    <div className="relative w-full h-full bg-[#402917]">
       <div
-        className="text-white absolute top-[46px] right-5"
+        className="text-white absolute top-[46px] right-5 cursor-pointer"
         onClick={() => setIsOpen(true)}
       >
         <svg

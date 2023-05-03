@@ -2,7 +2,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { ReactButtomSheet } from 'chan-bottom-sheet';
-import 'chan-bottom-sheet/dist/tailwind.css';
 
 //import { ReactButtomSheet } from '../../dist';
 // import '../../dist/tailwind.css';

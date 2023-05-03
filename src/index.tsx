@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { BottomSheetContext, useBottomSheetContext } from './context';
 import { ReactButtomSheetProps } from './types';
@@ -14,10 +14,49 @@ function ReactButtomSheet({
     throw new Error('container element not found');
   }
 
+  const inEffect = (height: number) => `
+    @keyframes react-fade-in {
+      0%   { transform: translateY(${height}px); }
+      100% { transform: translateY(0); }
+    }
+  `;
+
+  const outEffect = (height: number) => `
+    @keyframes react-fade-out {
+      0%   { transform: translateY(0); }
+      100% { transform: -translateY(${height}px); }
+    }
+  `;
+
+  const bottomSheetRef = useRef<HTMLDivElement>(null);
+  const [translateY, setTranslateY] = useState(0);
+
+  // isOpen 일때 에니메이션 구현
+  useEffect(() => {
+    if (!bottomSheetRef.current) return;
+
+    if (isOpen) {
+      // 흠... 처음에 안보였다가 올라와야 하는데... 일단 크기를 알야야 될 듯?
+      const h = bottomSheetRef.current.clientHeight;
+      setTranslateY(h);
+
+      bottomSheetRef.current.style.animationDuration = `100ms`;
+      bottomSheetRef.current.style.animationIterationCount = '1';
+      bottomSheetRef.current.style.animationName = `react-fade-${
+        isOpen ? 'in' : 'out'
+      }`;
+      bottomSheetRef.current.style.animationTimingFunction = isOpen
+        ? 'ease-out'
+        : 'ease-in';
+    } else {
+      // document.body.style.overflow = 'unset';
+    }
+  }, [isOpen]);
+
   return ReactDOM.createPortal(
     <BottomSheetContext.Provider value={{ isOpen, onClose }}>
       {isOpen && (
-        <section
+        <div
           style={{ ...styles.wrapper }}
           onClick={event => {
             if (event.target === event.currentTarget) {
@@ -25,8 +64,15 @@ function ReactButtomSheet({
             }
           }}
         >
-          <div style={{ ...styles.modal }}>{children}</div>
-        </section>
+          <style
+            id="react-bottom-sheet-style"
+            children={isOpen ? inEffect(translateY) : outEffect(translateY)}
+          />
+
+          <div style={{ ...styles.modal }} ref={bottomSheetRef}>
+            {children}
+          </div>
+        </div>
       )}
     </BottomSheetContext.Provider>,
     container
