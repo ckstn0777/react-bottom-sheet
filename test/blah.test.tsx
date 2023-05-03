@@ -1,6 +1,6 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import ReactButtomSheet from '../src';
+// import * as React from 'react';
+// import * as ReactDOM from 'react-dom';
+// import ReactButtomSheet from '../src';
 
 // describe('it', () => {
 //   it('renders without crashing', () => {
